@@ -22,9 +22,9 @@
     </header>
     <main>
       <article class="card">
-        <h2 class="card__title">Фритрек и нулевой спринт: Подготовка к работе</h2>
+        <h2 class="card__title">Фритрек и нулевой спринт: Подготовка&nbsp;к&nbsp;работе</h2>
         <figure class="card__image">
-          <img src="./images/plans.jpg" alt="The jorney of a thousand miles begins with a single stap. Lao Tzu">
+          <img class="saturate-multiply" src="./images/plans.jpg" alt="The jorney of a thousand miles begins with a single stap. Lao Tzu">
           <figcaption>&lt;выбор&gt;</figcaption>
         </figure>
         <div class="card__text">
@@ -48,7 +48,7 @@
       <article class="card">
         <h2 class="card__title">1 спринт: Я — чистый лист</h2>
         <figure class="card__image">
-          <img src="./images/page.jpg" alt="Opened notebook withwith empty pages on the table">
+          <img class="hue-rotate" src="./images/page.jpg" alt="Opened notebook withwith empty pages on the table">
           <figcaption>&lt;ожидания&gt;</figcaption>
         </figure>
         <div class="card__text">
@@ -72,7 +72,7 @@
       <article class="card">
         <h2 class="card__title">1 спринт: А если не получится?</h2>
         <figure class="card__image">
-          <img class="bottom-position" src="./images/first success.jpg" alt="A woman with the hand up">
+          <img class="blur bottom-position" src="./images/first success.jpg" alt="A woman with the hand up">
           <figcaption>&lt;первая победа&gt;</figcaption>
         </figure>
         <div class="card__text">
@@ -96,7 +96,7 @@
       <article class="card">
         <h2 class="card__title">2 спринт: Погоня за идеалом</h2>
         <figure class="card__image">
-          <img src="./images/doubts.jpg" alt="Sign on a black table 'Dificult ros=ads lead to beautiful destinations'">
+          <img class="contrast-multiply" src="./images/doubts.jpg" alt="Sign on a black table 'Dificult ros=ads lead to beautiful destinations'">
           <figcaption>&lt;сомнения&gt;</figcaption>
         </figure>
         <div class="card__text">
@@ -120,7 +120,7 @@
       <article class="card">
         <h2 class="card__title">2 спринт: О тех, кто рядом</h2>
         <figure class="card__image">
-          <img src="./images/team.jpg" alt="Circle of people holding their hands on each other's one. Team gesture">
+          <img class="invert" src="./images/team.jpg" alt="Circle of people holding their hands on each other's one. Team gesture">
           <figcaption>&lt;команда&gt;</figcaption>
         </figure>
         <div class="card__text">
@@ -144,7 +144,7 @@
       <article class="card">
         <h2 class="card__title">3 спринт: Обходные стратегии</h2>
         <figure class="card__image">
-          <img src="./images/two_arrows.jpg" alt="Two darts in a dartboard">
+          <img class="saturate" src="./images/two_arrows.jpg" alt="Two darts in a dartboard">
           <figcaption>&lt;расширяем горизонты&gt;</figcaption>
         </figure>
         <div class="card__text">
@@ -168,7 +168,7 @@
       <article class="card">
         <h2 class="card__title">3 спринт: Когда опускаются руки</h2>
         <figure class="card__image">
-          <img src="./images/good_vibes_only.jpg" alt="Sign on the sand 'Good vibes only'">
+          <img class="brightness" src="./images/good_vibes_only.jpg" alt="Sign on the sand 'Good vibes only'">
           <figcaption>&lt;дзен&gt;</figcaption>
         </figure>
         <div class="card__text">
@@ -192,7 +192,7 @@
       <article class="card">
         <h2 class="card__title">«Сейчас я здесь»</h2>
         <figure class="card__image">
-          <img src="./images/repeat.jpg" alt="Cafe showcase with an inspiring text">
+          <img class="sepia-multiply" src="./images/repeat.jpg" alt="Cafe showcase with an inspiring text">
           <figcaption>&lt;experience???&gt;</figcaption>
         </figure>
         <div class="card__text">
@@ -213,21 +213,24 @@
           </div>
         </div>
       </article>
-      <button type="button" class="save__button button">
-        <use>
-
-        </use>
+      <button type="button" class="save__button button" onclick="window['save-question'].showModal()" aria-controls="save-question">
+        <svg width="21" height="21" viewBox="0 0 39 39">
+          <use href="./svg/disk.svg#disk-icon">
+          </use>
+        </svg>
         <span class="button__text">Сохранить на память</span>
       </button>
+      <dialog id="save-question">
+        <form class="dialog__form" method="dialog">
+          <svg width="39" height="39" viewBox="0 0 39 39" class="dialog__image">
+            <use href="./svg/disk.svg#disk-icon">
+            </use>
+          </svg>
+          <span class="button__text dialog__text">Вставьте дискету,&nbsp;чтобы продолжить</span>
+          <button class="button button__text dialog__button">ok</button>
+        </form>
+      </dialog>
     </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
-<svg xmlns="http://www.w3.org/2000/svg">
-  <symbol
-    width="40"
-    height="40"
-    fill="none">
-    <path fill="#000" d="M.5.5h3v3h-3zM.5 3.5h3v3h-3zM.5 6.5h3v3h-3zM.5 9.5h3v3h-3zM.5 12.5h3v3h-3zM.5 15.5h3v3h-3zM.5 18.5h3v3h-3zM.5 21.5h3v3h-3zM.5 24.5h3v3h-3zM.5 27.5h3v3h-3zM.5 30.5h3v3h-3zM.5 33.5h3v3h-3zM.5 36.5h3v3h-3zM33.5.5v3h-3v-3zM30.5.5v3h-3v-3zM27.5.5v3h-3v-3zM24.5.5v3h-3v-3zM21.5.5v3h-3v-3zM18.5.5v3h-3v-3zM15.5.5v3h-3v-3zM12.5.5v3h-3v-3zM9.5.5v3h-3v-3zM6.5.5v3h-3v-3zM36.5 3.5v3h-3v-3zM9.5 6.5v3h-3v-3zM9.5 3.5v3h-3v-3zM9.5 9.5v3h-3v-3zM30.5 6.5v3h-3v-3zM30.5 3.5v3h-3v-3zM30.5 9.5v3h-3v-3zM24.5 6.5v3h-3v-3zM24.5 3.5v3h-3v-3zM24.5 9.5v3h-3v-3zM30.5 12.5v3h-3v-3zM27.5 12.5v3h-3v-3zM24.5 12.5v3h-3v-3zM21.5 12.5v3h-3v-3zM18.5 12.5v3h-3v-3zM15.5 12.5v3h-3v-3zM12.5 12.5v3h-3v-3zM9.5 12.5v3h-3v-3zM33.5 21.5v3h-3v-3zM30.5 21.5v3h-3v-3zM27.5 21.5v3h-3v-3zM24.5 21.5v3h-3v-3zM21.5 21.5v3h-3v-3zM18.5 21.5v3h-3v-3zM15.5 21.5v3h-3v-3zM12.5 21.5v3h-3v-3zM9.5 21.5v3h-3v-3zM33.5 24.5v3h-3v-3zM9.5 24.5v3h-3v-3zM33.5 27.5v3h-3v-3zM9.5 27.5v3h-3v-3zM33.5 30.5v3h-3v-3zM9.5 30.5v3h-3v-3zM9.5 33.5v3h-3v-3zM33.5 33.5v3h-3v-3zM36.5 36.5v3h-3v-3zM33.5 36.5v3h-3v-3zM30.5 36.5v3h-3v-3zM27.5 36.5v3h-3v-3zM24.5 36.5v3h-3v-3zM21.5 36.5v3h-3v-3zM18.5 36.5v3h-3v-3zM15.5 36.5v3h-3v-3zM12.5 36.5v3h-3v-3zM9.5 36.5v3h-3v-3zM6.5 36.5v3h-3v-3zM39.5 39.5h-3v-3h3zM39.5 36.5h-3v-3h3zM39.5 33.5h-3v-3h3zM39.5 30.5h-3v-3h3zM39.5 27.5h-3v-3h3zM39.5 24.5h-3v-3h3zM39.5 21.5h-3v-3h3zM39.5 18.5h-3v-3h3zM39.5 15.5h-3v-3h3zM39.5 12.5h-3v-3h3zM39.5 9.5h-3v-3h3z"/>
-  </symbol>
-</svg>
