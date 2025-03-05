@@ -7,5 +7,11 @@
   --accent-color: #fff;
   --main-color: #000;
   --border: 2px solid var(--main-color);
+  --bg-image: repeating-linear-gradient(to right,  rgb(211, 211, 211) 2px, rgb(211 211 211 / 0) 2px 4px), repeating-linear-gradient(to bottom,  rgb(211 211 211) 2px, rgb(211 211 211 / 0) 2px 4px);
+
+  --heart-main-color: #ff0000;
+  --heart-contour-color: #000;
+  --heart-center-color: #fff;
+
 
 }

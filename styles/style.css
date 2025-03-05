@@ -11,15 +11,15 @@
 */
 
 .page {
-  position: relative;
   min-inline-size: 375px;
   min-block-size: 100dvb;
   font-family: var(--main-font-family), sans-serif;
   font-variation-settings: "wght" var(--main-font-weight);
-  background-color: #f5f5f5;
+  
   margin: 0 auto;
-  background-image: linear-gradient(#e7e7e7, #1a1a1a);
+  background-image: repeating-linear-gradient(rgb(211, 211, 211) 2px, rgb(211 211 211 / 0) 2px 4px), repeating-linear-gradient(rgb(211 211 211) 2px, rgb(211 211 211 / 0) 2px 4px),linear-gradient(#e7e7e7, #1a1a1a);
   background-size: cover;
+  background-position: 0;
   background-repeat: no-repeat;
 }
 
@@ -32,7 +32,7 @@
   padding: 100px 0;
 }
 
-.header:after {
+/*.header:after {
   position: fixed;
   inset: 0;
   content: '';
@@ -41,7 +41,7 @@
   background-repeat: repeat;
   height: 100vh;
   z-index: -1;
-}
+}*/
 
 .header__content {
   display: grid;
@@ -122,7 +122,7 @@ main {
 }
 
 .invert {
-  filter: invert(75%);
+  filter: invert(35%);
 }
 
 .saturate {
@@ -189,29 +189,43 @@ main {
 }
 
 .card__icon-button {
-  padding: 3px 3px 3px 4px;
+  block-size: 100%;
+  padding: 0;
   cursor: pointer;
-  transition: outline 0.3s ease;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
 }
 
 .button:focus,
-.button:focus-visible,
-.card__icon-button:focus,
-.card__icon-button:focus-visible {
+.card__icon-button:focus {
   outline: none;
 }
 
 .card__icon-button:focus-visible {
-  outline: 2px solid currentColor; 
+  border: 2px solid currentColor; 
 }
 
 
-
 .button {
+  position: relative;
   border: var(--border);
   background-color: var(--accent-color);
   cursor: pointer;
   transition: box-shadow 0.3s ease;
+}
+
+.button::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background-color: var(--main-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.button:hover::after {
+  transform: scaleX(1);
 }
 
 
@@ -223,6 +237,10 @@ main {
 .like-icon {
 }
 
+.sparks {
+  opacity: 0;
+}
+
 .card__like-button {
   min-height: 38px;
   padding-inline: 37px;
@@ -230,9 +248,11 @@ main {
 }
 
 .button__text {
+  position: relative;
   font-family: var(--accent-font-family);
   font-size: 0.875rem;
   line-height: 0.9;
+   
 }
 
 .save__button {
@@ -244,18 +264,15 @@ main {
   gap: 8px;
 }
 
-@media (width <= 375px) {
-  .save__button {
-    flex-direction: column;
-  }
-}
 
-/*----------- DIALOG --------------*/
+
+
+/*-------- DIALOG-WINDOW -----------*/
 
 dialog {
   margin: auto;
   padding: 30px;
-  
+  max-inline-size: 353px;
 }
 
 dialog::backdrop {
@@ -266,23 +283,35 @@ dialog::backdrop {
 .dialog__form {
   display: grid;
   grid-template: 1fr 38px / 39px 1fr;
-  max-inline-size: calc(100% - 60px);
+  inline-size: 100%;
   row-gap: 30px;
   column-gap: 20px;
   align-items: center;
-  justify-content: stretch;
   
 }
 
 .dialog__text {
   line-height: 1.5;
   text-transform: uppercase;
+ 
 }
 
 .dialog__button {
   text-transform: uppercase;
   grid-column: span 2;
+  block-size: 100%;
+  
 }
 
+@media (width <= 375px) {
+  .save__button {
+    flex-direction: column;
+  }
+
+  dialog {
+    padding: 30px 42px;
+    max-inline-size: 341px;
+  }
+}
 
 
