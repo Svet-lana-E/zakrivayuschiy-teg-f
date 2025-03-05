@@ -15,12 +15,10 @@
   min-block-size: 100dvb;
   font-family: var(--main-font-family), sans-serif;
   font-variation-settings: "wght" var(--main-font-weight);
-  
   margin: 0 auto;
-  background-image: repeating-linear-gradient(rgb(211, 211, 211) 2px, rgb(211 211 211 / 0) 2px 4px), repeating-linear-gradient(rgb(211 211 211) 2px, rgb(211 211 211 / 0) 2px 4px),linear-gradient(#e7e7e7, #1a1a1a);
+  background-image: var(--bg-image);
   background-size: cover;
-  background-position: 0;
-  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /*------ HEADER --------------*/
@@ -32,17 +30,6 @@
   padding: 100px 0;
 }
 
-/*.header:after {
-  position: fixed;
-  inset: 0;
-  content: '';
-  background-image:
-    url(../images/main-cover.png);
-  background-repeat: repeat;
-  height: 100vh;
-  z-index: -1;
-}*/
-
 .header__content {
   display: grid;
   place-items: center;
@@ -53,7 +40,7 @@
   inline-size: 100%;
   max-inline-size: 700px;
   margin: 0 auto;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), sans-serif;
 }
 
 .header__title {
@@ -64,11 +51,13 @@
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
-/*------ CARD --------------*/
+/*------ MAIN --------------*/
 
 main {
   padding-block-end: 100px;
 }
+
+/*------ CARD --------------*/
 
 .card {
   inline-size: 100%;
@@ -102,7 +91,6 @@ main {
   aspect-ratio: 1;
   object-fit: cover;
   object-position: left center;
-  
 }
 
 .saturate-multiply {
@@ -141,11 +129,11 @@ main {
   object-position: left bottom;
 }
 
-.card__image figcaption {
+.card__image span {
   position: absolute;
   top: 25px;
   right: 3.5%;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), sans-serif;
   font-size: 0.875rem;
   line-height: 1;
   color: currentColor;
@@ -153,14 +141,13 @@ main {
     1px 0 var(--accent-color), 0 -1px var(--accent-color);
   background-color: transparent;
   mix-blend-mode: hard-light;
-  
 }
 
 @supports (
   (text-stroke: 1px var(--accent-color)) or
     (-webkit-text-stroke: 11px var(--accent-color))
 ) {
-  .card__image figcaption {
+  .card__image span {
     -webkit-text-stroke: 1px var(--accent-color);
     text-stroke: 1px var(--accent-color);
     text-shadow: none;
@@ -190,6 +177,7 @@ main {
 
 .card__icon-button {
   block-size: 100%;
+  max-block-size: 38px;
   padding: 0;
   cursor: pointer;
   border: 2px solid transparent;
@@ -205,16 +193,73 @@ main {
   border: 2px solid currentColor; 
 }
 
+/*------ HEART ANIMATION----------*/
+
+.like-icon {
+}
+
+.heart {
+
+}
+
+.contour {
+
+}
+
+.card__icon-button:hover .contour {
+
+}
+
+.main-body {
+  transition: fill 0.3s 0 ease-in-out;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--heart-contour-color);
+  transition: fill 0.3s 0.05s ease-in-out;
+}
+
+.core {
+  transition: transform 0.3s 0.03s ease-in-out;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--heart-contour-color);
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform 0.3s 0 ease-in-out;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.card__icon-button:hover .sparks {
+  
+}
+
+
+
+
+
+.card__icon-button:active {
+  
+}
+
+/*-----------------------------------*/
 
 .button {
   position: relative;
   border: var(--border);
-  background-color: var(--accent-color);
+  color: var(--accent-color);
   cursor: pointer;
   transition: box-shadow 0.3s ease;
+  background-color: var(--accent-color);
 }
 
-.button::after {
+.button::before {
   position: absolute;
   inset: 0;
   content: '';
@@ -224,35 +269,25 @@ main {
   transition: transform 0.5s ease-in-out;
 }
 
-.button:hover::after {
+.button:hover::before {
   transform: scaleX(1);
 }
 
-
-
 .button:focus-visible {
-  box-shadow: 2px 2px 0 0 currentColor;
-}
-
-.like-icon {
-}
-
-.sparks {
-  opacity: 0;
+  box-shadow: 2px 2px 0 0 var(--main-color);
 }
 
 .card__like-button {
-  min-height: 38px;
-  padding-inline: 37px;
-  
+  block-size: 38px;
+  inline-size: 130px;
 }
 
 .button__text {
   position: relative;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), sans-serif;
   font-size: 0.875rem;
   line-height: 0.9;
-   
+  mix-blend-mode: difference;
 }
 
 .save__button {
@@ -262,6 +297,11 @@ main {
   justify-content: center;
   align-items: center;
   gap: 8px;
+}
+
+.save__button svg {
+  position: relative;
+  mix-blend-mode: difference;
 }
 
 
@@ -293,6 +333,7 @@ dialog::backdrop {
 .dialog__text {
   line-height: 1.5;
   text-transform: uppercase;
+  mix-blend-mode: normal;
  
 }
 
@@ -300,7 +341,6 @@ dialog::backdrop {
   text-transform: uppercase;
   grid-column: span 2;
   block-size: 100%;
-  
 }
 
 @media (width <= 375px) {
