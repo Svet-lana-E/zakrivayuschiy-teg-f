@@ -59,6 +59,7 @@
   max-inline-size: 700px;
   margin: 0 auto;
   font-family: var(--accent-font-family), sans-serif;
+  text-transform: uppercase;
 }
 
 .header__title {
@@ -190,7 +191,7 @@ main {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 9px;
+  gap: 4px;
 }
 
 .card__icon-button {
@@ -208,7 +209,7 @@ main {
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid currentColor; 
+  border: 2px solid currentColor;
 }
 
 /*------ HEART ANIMATION----------*/
@@ -304,7 +305,7 @@ main {
 .button::before {
   position: absolute;
   inset: 0;
-  content: '';
+  content: "";
   background-color: var(--main-color);
   transform: scaleX(0);
   transform-origin: left;
@@ -338,7 +339,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .save__button svg {
@@ -350,7 +351,7 @@ main {
 
 dialog {
   margin: auto;
-  padding: 30px;
+  padding: 27px;
   max-inline-size: 353px;
 }
 
@@ -383,6 +384,11 @@ dialog::backdrop {
 @media (width <= 375px) {
   .save__button {
     flex-direction: column;
+  }
+
+  .save__button svg {
+    width: 28px;
+    height: 28px;
   }
 
   dialog {
