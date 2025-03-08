@@ -27,34 +27,30 @@
   inline-size: 100%;
   min-block-size: 100%;
   block-size: 100%;
-  padding: 100px 0;
-}
-
-.header__content {
   display: grid;
   place-items: center;
   gap: 20px;
   padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) 0;
   background-color: var(--accent-color);
   border: var(--border);
-  inline-size: 100%;
   max-inline-size: 700px;
-  margin: 0 auto;
+  margin: 100px auto;
   font-family: var(--accent-font-family), sans-serif;
   text-transform: uppercase;
 }
 
-.header__title {
+.header__logo {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-decoration: none;
 }
 
-.header__subtitle {
+.header__title {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 /*------ MAIN --------------*/
 
-main {
+.main-content {
   padding-block-end: 100px;
 }
 
@@ -83,7 +79,7 @@ main {
 .card__image {
   position: relative;
   inline-size: 100%;
-  border: var(--border);
+  border-inline: var(--border);
   line-height: 0;
 }
 
@@ -94,35 +90,35 @@ main {
   object-position: left center;
 }
 
-.saturate-multiply {
+.filter-saturate-contrast {
   filter: saturate(300%) contrast(150%);
 }
 
-.hue-rotate {
+.filter-hue-rotate {
   filter: hue-rotate(300deg);
 }
 
-.blur {
+.filter-blur {
   filter: blur(3px);
 }
 
-.contrast-multiply {
+.filter-contrast-invert {
   filter: contrast(600%) invert(90%);
 }
 
-.invert {
+.filter-invert {
   filter: invert(35%);
 }
 
-.saturate {
+.filter-saturate {
   filter: saturate(300%);
 }
 
-.brightness {
+.filter-brightness {
   filter: brightness(40%);
 }
 
-.sepia-multiply {
+.filter-sepia-invert-contrast {
   filter: sepia(80%) invert(0.65) contrast(2);
 }
 
